@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asset List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-col>
+
+    <ion-card  *ngFor= "let asset of asset_list; let i = index;">
+      <ion-row>
+      <ion-col size="10">
+          <ion-row>
+              <ion-col size="4">Asset Name:</ion-col>
+              <ion-col >{{asset.asset_detail}}</ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col size="4">Part Number</ion-col>
+              <ion-col>{{asset.part_number}}</ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col size="4">Asset Type:</ion-col>
+              <ion-col>{{asset.asset_type}}</ion-col>
+            </ion-row>
+      </ion-col>
+      <ion-col size="2" center>
+        <ion-icon name="trash" style="width: 20px;height:20px;" (click)="deleteAsset(i)"></ion-icon>
+        <img src="../../assets/edit.png" style="width: 30px;height:30px;" (click)="editAsset(i)"/>
+      </ion-col>
+    </ion-row>
+    </ion-card>
+
+
+  </ion-col>
+
+</ion-content>
